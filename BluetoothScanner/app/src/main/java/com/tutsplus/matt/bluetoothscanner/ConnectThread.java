@@ -1,7 +1,9 @@
 package com.tutsplus.matt.bluetoothscanner;
 
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.os.Build;
 import android.util.Log;
 
 import java.io.IOException;
@@ -15,6 +17,7 @@ public class ConnectThread extends Thread{
     private final BluetoothDevice bTDevice;
     private final BluetoothSocket bTSocket;
 
+    @TargetApi(Build.VERSION_CODES.ECLAIR)
     public ConnectThread(BluetoothDevice bTDevice, UUID UUID) {
         BluetoothSocket tmp = null;
         this.bTDevice = bTDevice;
